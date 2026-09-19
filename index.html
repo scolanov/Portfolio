@@ -1,53 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seth Olanovich | Aerospace Engineering</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheet 001 — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p>Aerospace Engineering Student</p>
-    </header>
+<!-- Blueprint grid background -->
+<div class="grid-bg" aria-hidden="true"></div>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>
-                I am an aerospace engineering student interested in
-                rocketry, systems engineering, and flight hardware.
-            </p>
-        </section>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-mark">
+    <span class="nav-mark-code">EP&#8209;01</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#specs">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-        <section>
-            <h2>Projects</h2>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Portfolio &nbsp;/&nbsp; Rev. 2026.09</p>
+    <h1 class="hero-title">
+      <span class="line" data-name-line>YOUR NAME</span>
+      <span class="line hero-sub" data-role-line>Mechanical &amp; Systems Engineer</span>
+    </h1>
+    <p class="hero-desc">
+      I design, prototype, and ship physical systems — from first sketch
+      to tolerance-checked drawing to a thing that actually works.
+      Below is a running log of what I've built and what I'm building now.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">View projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
 
-            <div>
-                <h3>High-Powered Rocketry</h3>
-                <p>
-                    Design and development of high-powered rockets,
-                    avionics, recovery systems, and payloads.
-                </p>
-            </div>
+  <div class="hero-drawing" aria-hidden="true">
+    <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" id="schematicSvg">
+      <!-- Simple gear + linkage schematic, drawn on load via stroke-dashoffset animation -->
+      <circle class="draw-path" cx="240" cy="240" r="140" stroke="#E8622C" stroke-width="1.5"/>
+      <circle class="draw-path" cx="240" cy="240" r="86" stroke="#6B9080" stroke-width="1.5"/>
+      <g class="draw-path" stroke="#E8622C" stroke-width="1.5">
+        <line x1="240" y1="60" x2="240" y2="100"/>
+        <line x1="240" y1="380" x2="240" y2="420"/>
+        <line x1="60" y1="240" x2="100" y2="240"/>
+        <line x1="380" y1="240" x2="420" y2="240"/>
+        <line x1="112" y1="112" x2="140" y2="140"/>
+        <line x1="368" y1="112" x2="340" y2="140"/>
+        <line x1="112" y1="368" x2="140" y2="340"/>
+        <line x1="368" y1="368" x2="340" y2="340"/>
+      </g>
+      <circle class="draw-path" cx="240" cy="240" r="6" stroke="#EDEEF0" stroke-width="1.5" fill="#0F1B2B"/>
+      <path class="draw-path" d="M240 154 L262 196 L218 196 Z" stroke="#EDEEF0" stroke-width="1.2"/>
+      <text x="20" y="30" class="svg-label">DWG NO. SK&#8209;014</text>
+      <text x="20" y="462" class="svg-label">SCALE 1:1</text>
+    </svg>
+  </div>
+</header>
 
-            <div>
-                <h3>Flight Computer</h3>
-                <p>
-                    Development of a custom STM32-based flight computer
-                    for aerospace applications.
-                </p>
-            </div>
-        </section>
+<!-- ============ PROJECTS ============ -->
+<section class="work" id="work">
+  <div class="section-head">
+    <h2 class="section-title">Project Log</h2>
+    <p class="section-sub">Sheets 002&ndash;00N &mdash; every project below is a title block: scope, status, stack, and the story.</p>
+  </div>
 
-        <section>
-            <h2>Contact</h2>
-            <p>Email: your-email@example.com</p>
-        </section>
-    </main>
+  <div class="filter-row" role="tablist" aria-label="Filter projects">
+    <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="filter-btn" data-filter="current" role="tab" aria-selected="false">In progress</button>
+    <button class="filter-btn" data-filter="past" role="tab" aria-selected="false">Completed</button>
+  </div>
 
+  <div class="project-grid" id="projectGrid">
+    <!-- Project cards are injected by script.js from the PROJECTS data array -->
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-copy">
+      <p class="section-eyebrow">Sheet 000 &nbsp;/&nbsp; Notes</p>
+      <h2 class="section-title">How I work</h2>
+      <p>
+        I like problems that fight back — where the constraint isn't
+        "what's possible" but "what's possible by Friday, on this budget,
+        with these tolerances." I move fast from CAD to physical prototype,
+        and I'd rather test a rough version this week than a polished
+        version next month.
+      </p>
+      <p>
+        Most of my work sits at the intersection of mechanical design,
+        embedded electronics, and manufacturing — I'm as comfortable in
+        SolidWorks as I am soldering a board or running a CNC toolpath.
+      </p>
+    </div>
+    <dl class="about-stats">
+      <div class="stat">
+        <dt>Years building</dt>
+        <dd id="statYears">5+</dd>
+      </div>
+      <div class="stat">
+        <dt>Projects shipped</dt>
+        <dd id="statProjects">—</dd>
+      </div>
+      <div class="stat">
+        <dt>Currently</dt>
+        <dd>Open to new work</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ SKILLS / SPEC SHEET ============ -->
+<section class="specs" id="specs">
+  <div class="section-head">
+    <p class="section-eyebrow">Sheet 003 &nbsp;/&nbsp; Spec Sheet</p>
+    <h2 class="section-title">Tools &amp; Tolerances</h2>
+  </div>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Tools</th>
+        <th>Comfort</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CAD / Simulation</td>
+        <td>SolidWorks, Fusion 360, ANSYS</td>
+        <td><span class="bar" style="--pct:90%"></span></td>
+      </tr>
+      <tr>
+        <td>Embedded / Firmware</td>
+        <td>C/C++, Arduino, STM32</td>
+        <td><span class="bar" style="--pct:75%"></span></td>
+      </tr>
+      <tr>
+        <td>Manufacturing</td>
+        <td>CNC, 3D Printing, Sheet Metal</td>
+        <td><span class="bar" style="--pct:85%"></span></td>
+      </tr>
+      <tr>
+        <td>Controls / Software</td>
+        <td>Python, MATLAB, ROS</td>
+        <td><span class="bar" style="--pct:70%"></span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-eyebrow">Sheet 004 &nbsp;/&nbsp; Contact</p>
+    <h2 class="section-title">Let's build something</h2>
+    <p class="contact-desc">
+      Have a project, a role, or a hard problem? I'd like to hear about it.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:you@example.com" class="contact-link">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">you@example.com</span>
+      </a>
+      <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">/in/yourname</span>
+      </a>
+      <a href="https://github.com" class="contact-link" target="_blank" rel="noopener">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">@yourhandle</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Drawn and revised, 2026. All dimensions approximate.</p>
+</footer>
+
+<!-- ============ PROJECT DETAIL MODAL ============ -->
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-overlay" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" data-close aria-label="Close">&times;</button>
+    <div class="modal-content" id="modalContent"><!-- injected --></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
