@@ -202,13 +202,14 @@ a { color: inherit; }
   letter-spacing: 0.05em;
 }
 
-.draw-path {
-  fill: none;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 2.4s ease forwards;
+.hero-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--grid-line);
 }
-@keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* ==========================================================
    SECTION HEADS (shared)
