@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Project — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-mark">
+    <span class="nav-mark-code">EP&#8209;01</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#specs">Skills</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============ PROJECT DETAIL ============ -->
+<main class="project-page" id="projectPage">
+  <!-- Content is injected by project.js. If no project is found,
+       a "not found" message renders here instead. -->
+</main>
+
+<footer class="footer">
+  <p>Drawn and revised, 2026. All dimensions approximate.</p>
+</footer>
+
+<script src="projects-data.js"></script>
+<script src="project.js"></script>
+</body>
+</html>
