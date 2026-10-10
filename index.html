@@ -1,183 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sheet 001 — Engineering Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Blueprint grid background -->
-<div class="grid-bg" aria-hidden="true"></div>
+  <header class="hero">
+    <div class="wrap">
+      <!-- 1. YOUR NAME -->
+      <h1>Your Name</h1>
+      <div class="role">Mechanical Engineering Student</div>
 
-<!-- ============ NAV ============ -->
-<nav class="nav">
-  <div class="nav-mark">
-    <span class="nav-mark-code">EP&#8209;01</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#work">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#specs">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Portfolio &nbsp;/&nbsp; Rev. 2026.09</p>
-    <h1 class="hero-title">
-      <span class="line" data-name-line>Seth Olanovich</span>
-      <span class="line hero-sub" data-role-line>Aerospace Engineer</span>
-    </h1>
-    <p class="hero-desc">
-      I design, prototype, and ship physical systems — from first sketch
-      to tolerance-checked drawing to a thing that actually works.
-      Below is a running log of what I've built and what I'm building now.
-    </p>
-    <div class="hero-actions">
-      <a href="#work" class="btn btn-primary">View projects</a>
-      <a href="#contact" class="btn btn-ghost">Get in touch</a>
-    </div>
-  </div>
-
- <div class="hero-drawing">
-  <img src="images/FirmLayout.jpg" alt="Your Name" class="hero-photo">
-</div>
-</header>
-
-<!-- ============ PROJECTS ============ -->
-<section class="work" id="work">
-  <div class="section-head">
-    <h2 class="section-title">Project Log</h2>
-    <p class="section-sub">Sheets 002&ndash;00N &mdash; every project below is a title block: scope, status, stack, and the story.</p>
-  </div>
-
-  <div class="filter-row" role="tablist" aria-label="Filter projects">
-    <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-    <button class="filter-btn" data-filter="current" role="tab" aria-selected="false">In progress</button>
-    <button class="filter-btn" data-filter="past" role="tab" aria-selected="false">Completed</button>
-  </div>
-
-  <div class="project-grid" id="projectGrid">
-    <!-- Project cards are injected by script.js from the PROJECTS data array -->
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="about-grid">
-    <div class="about-copy">
-      <p class="section-eyebrow">Sheet 000 &nbsp;/&nbsp; Notes</p>
-      <h2 class="section-title">How I work</h2>
+      <!-- 2. ABOUT YOU -->
       <p>
-        I like problems that fight back — where the constraint isn't
-        "what's possible" but "what's possible by Friday, on this budget,
-        with these tolerances." I move fast from CAD to physical prototype,
-        and I'd rather test a rough version this week than a polished
-        version next month.
+        Write two or three sentences about yourself here: what you study, what
+        kinds of problems you like to solve, and what you are looking for
+        (internships, co-ops, a full-time role).
       </p>
-      <p>
-        Most of my work sits at the intersection of mechanical design,
-        embedded electronics, and manufacturing — I'm as comfortable in
-        SolidWorks as I am soldering a board or running a CNC toolpath.
-      </p>
+      <div class="links">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+        <a href="https://github.com/your-username">GitHub</a>
+        <a href="resume.pdf">Resume</a>
+      </div>
     </div>
-    <dl class="about-stats">
-      <div class="stat">
-        <dt>Years building</dt>
-        <dd id="statYears">5+</dd>
-      </div>
-      <div class="stat">
-        <dt>Projects shipped</dt>
-        <dd id="statProjects">—</dd>
-      </div>
-      <div class="stat">
-        <dt>Currently</dt>
-        <dd>Open to new work</dd>
-      </div>
-    </dl>
-  </div>
-</section>
+  </header>
 
-<!-- ============ SKILLS / SPEC SHEET ============ -->
-<section class="specs" id="specs">
-  <div class="section-head">
-    <p class="section-eyebrow">Sheet 003 &nbsp;/&nbsp; Spec Sheet</p>
-    <h2 class="section-title">Tools &amp; Tolerances</h2>
-  </div>
+  <!-- 3. PROJECTS -->
+  <main class="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="grid">
 
-  <table class="spec-table">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Tools</th>
-        <th>Comfort</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>CAD / Simulation</td>
-        <td>SolidWorks, Fusion 360, ANSYS</td>
-        <td><span class="bar" style="--pct:90%"></span></td>
-      </tr>
-      <tr>
-        <td>Embedded / Firmware</td>
-        <td>C/C++, Arduino, STM32</td>
-        <td><span class="bar" style="--pct:75%"></span></td>
-      </tr>
-      <tr>
-        <td>Manufacturing</td>
-        <td>CNC, 3D Printing, Sheet Metal</td>
-        <td><span class="bar" style="--pct:85%"></span></td>
-      </tr>
-      <tr>
-        <td>Controls / Software</td>
-        <td>Python, MATLAB, ROS</td>
-        <td><span class="bar" style="--pct:70%"></span></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+        <!-- PROJECT CARD: copy this whole <article> block to add another project -->
+        <article class="card">
+          <img src="images/project-1.jpg" alt="Photo of Project One">
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Project One</h3>
+              <a class="btn" href="projects/project-1.html">View project</a>
+            </div>
+            <p>One sentence on what you built and the result.</p>
+          </div>
+        </article>
 
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <p class="section-eyebrow">Sheet 004 &nbsp;/&nbsp; Contact</p>
-    <h2 class="section-title">Let's build something</h2>
-    <p class="contact-desc">
-      Have a project, a role, or a hard problem? I'd like to hear about it.
-    </p>
-    <div class="contact-links">
-      <a href="mailto:you@example.com" class="contact-link">
-        <span class="contact-label">Email</span>
-        <span class="contact-value">you@example.com</span>
-      </a>
-      <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">
-        <span class="contact-label">LinkedIn</span>
-        <span class="contact-value">/in/yourname</span>
-      </a>
-      <a href="https://github.com" class="contact-link" target="_blank" rel="noopener">
-        <span class="contact-label">GitHub</span>
-        <span class="contact-value">@yourhandle</span>
-      </a>
+        <article class="card">
+          <img src="images/project-2.jpg" alt="Photo of Project Two">
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Project Two</h3>
+              <a class="btn" href="projects/project-2.html">View project</a>
+            </div>
+            <p>One sentence on what you built and the result.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/project-3.jpg" alt="Photo of Project Three">
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Project Three</h3>
+              <a class="btn" href="projects/project-3.html">View project</a>
+            </div>
+            <p>One sentence on what you built and the result.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </main>
 
-<footer class="footer">
-  <p>Drawn and revised, 2026. All dimensions approximate.</p>
-</footer>
+  <footer>
+    <div class="wrap">&copy; 2026 Your Name</div>
+  </footer>
 
-<script src="projects-data.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
