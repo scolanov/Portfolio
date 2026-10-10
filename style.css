@@ -1,71 +1,56 @@
+/* Plain, simple portfolio style. Change the colors below to make it yours. */
 :root {
-  --paper: #eef1f4;
-  --ink: #14202b;
-  --muted: #5b6875;
-  --line: #c9d1d9;
-  --blue: #1f4e8c;
-  --accent: #e8590c;
-  --card: #ffffff;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #101820;
-    --ink: #e9eef3;
-    --muted: #9aa8b5;
-    --line: #2a3745;
-    --blue: #7fb0ee;
-    --card: #17222d;
-  }
+  --text: #222;
+  --link: #0b3d91;      /* navy blue */
+  --line: #bbb;
+  --bg: #fff;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "IBM Plex Sans", system-ui, sans-serif;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
 }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-h1, h2, h3 { font-family: "Archivo", "IBM Plex Sans", sans-serif; line-height: 1.1; margin: 0; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--link); }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; margin: 0; }
 
-/* Header / hero */
-.hero { padding: 72px 0 56px; border-bottom: 2px solid var(--ink); }
-.hero h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); font-weight: 800; letter-spacing: -0.03em; }
-.hero .role { color: var(--blue); font-size: 1.2rem; font-weight: 500; margin: 12px 0 28px; }
-.hero p { max-width: 62ch; font-size: 1.1rem; margin: 0 0 20px; }
-.links a { color: var(--blue); margin-right: 20px; font-weight: 500; }
+/* Top of page */
+.hero { padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: 2.6rem; }
+.hero .role { font-size: 1.1rem; color: #555; margin: 4px 0 18px; }
+.hero p { max-width: 640px; margin: 0 0 14px; }
+.links a { margin-right: 16px; }
 
 /* Projects */
-.projects { padding: 56px 0 80px; }
-.projects h2 { font-size: 2rem; margin-bottom: 28px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
-.card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: var(--line); }
-.card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-.card h3 { font-size: 1.25rem; }
-.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.projects { padding: 28px 0 50px; }
+.projects h2 { font-size: 1.7rem; margin-bottom: 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.card { border: 1px solid var(--line); display: flex; flex-direction: column; }
+.card img { width: 100%; height: 190px; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
+.card-body { padding: 12px 14px 14px; }
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+.card h3 { font-size: 1.15rem; }
+.card p { margin: 0; font-size: 0.95rem; color: #555; }
 
 .btn {
-  display: inline-block;
-  background: var(--accent);
+  background: var(--link);
   color: #fff;
-  padding: 8px 16px;
-  border-radius: 3px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  padding: 6px 12px;
+  font-size: 0.85rem;
   text-decoration: none;
   white-space: nowrap;
 }
-.btn:hover { filter: brightness(1.1); }
-a:focus-visible, .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.btn:hover { background: #000; }
 
-/* Project page */
-.project-page { padding: 48px 0 80px; }
-.project-page .back { color: var(--blue); font-weight: 500; }
-.project-page h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 20px 0 12px; }
-.project-page .hero-img { width: 100%; border-radius: 4px; margin: 24px 0; background: var(--line); }
-.project-page h2 { font-size: 1.4rem; margin: 32px 0 8px; }
-.project-page p, .project-page li { max-width: 70ch; }
+/* Project pages */
+.project-page { padding: 30px 0 50px; }
+.project-page h1 { font-size: 2.2rem; margin: 16px 0 8px; }
+.project-page h2 { font-size: 1.3rem; margin: 26px 0 6px; }
+.project-page .hero-img { max-width: 100%; margin: 16px 0; border: 1px solid var(--line); }
+.project-page p, .project-page li { max-width: 680px; }
 
-footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 0.9rem; }
+footer { border-top: 1px solid var(--line); padding: 16px 0; font-size: 0.85rem; color: #666; }
