@@ -61,7 +61,7 @@
       <!-- ================= ITERATION 1 ================= -->
       <section class="iteration" id="iteration-1">
         <div class="tag">Iteration 01</div>
-        <h2>Give this iteration a name</h2>
+        <h2>Copper Milled FIRM</h2>
 
         <div class="photos">
           <img src="../images/milled-firm-front.jpeg" alt="Iteration 1, photo 1">
@@ -70,10 +70,21 @@
         </div>
 
         <h3>What I did</h3>
-        <p>Describe the design, the tools you used (CAD, MATLAB, 3D printing, etc.), and the key decisions you made.</p>
+        <p>After reasearching/selecting the microcontroller and sensors for the project, 
+          breakout boards were order for each component to ensure all communication protocols 
+          performed well. To do this, I used KiCAD to design the schematic and traces paths required to connect the 
+          sensors to the STM32. This allow me to properly route the power system and SPI/I2C protocols without any messy wires. The 
+          gerber files from the completed design were uploaded to the Othermill PCB Maker for manufacturing. Lastly, the breakout boards were 
+          soldered to the board, code was flashed to the STM32, and data collection was tested.  </p>
 
         <h3>What I learned</h3>
-        <p>What worked, what failed, and what you wanted to change for the next version.</p>
+        <p>This version taught me to keep in mind the manufacturing capabilities available. For this project that includes, ensuring that 
+          the drill bit from the PCB mill can fit cut around a trace without interfereing with another one. This taught me to properly space 
+          out traces to allow the drill bit to properly cut around its outline. From milling the board it taught me the basics of PCBs, including 
+          how to utilized multiple layers of signals.
+          
+          While this version worked, the design was bulky, the solder was messy, and the signal integrity of the copper plate could be improved. The next iteration 
+          would need to include SMD components and be manufactured by a company with the appropriate machines.</p>
       </section>
 
       <!-- ================= ITERATION 2 ================= -->
