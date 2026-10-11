@@ -11,8 +11,10 @@
     .iteration { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
     .iteration .tag { color: var(--glow); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; }
     .iteration h2 { margin: 6px 0 20px; color: var(--ink); font-size: 1.6rem; letter-spacing: 2px; }
-    .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
-    .photos img { width: 100%; height: 220px; object-fit: cover; display: block; border: 1px solid var(--line); background: var(--panel); }
+    .photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+    .photos img { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--panel); }
+    .photos img:first-child { grid-column: 1 / -1; }  /* first photo is full width */
+    @media (max-width: 600px) { .photos { grid-template-columns: 1fr; } }
     .iteration h3 { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); margin: 20px 0 6px; }
     .iteration p { max-width: 680px; }
   </style>
