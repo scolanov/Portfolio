@@ -90,7 +90,7 @@
       <!-- ================= ITERATION 2 ================= -->
       <section class="iteration" id="iteration-2">
         <div class="tag">Iteration 02</div>
-        <h2>Give this iteration a name</h2>
+        <h2>FIRM v0.1</h2>
 
         <div class="photos">
           <img src="../images/firmV0.1-schematic.png" alt="Iteration 2, photo 1">
@@ -99,16 +99,38 @@
         </div>
 
         <h3>What I did</h3>
-        <p>What did you change from Iteration 1, and why?</p>
+        <p>For Firm v0.1 all compenents became SMD. This allowed me to put aside the breakout boards and reduce the size of the board.
+          I started by importing all the symbols/footprints of the components and made custom symbols/footprints for the ones not already 
+          in the KiCAD library. The next step was to add passive components and the power supply. The voltage regulator steped down the input voltage to 3.3V 
+          and a spilt rail with a ferite bead was used to provide analog power. To recieve power, the STM32 and sensors were given decoupling capacitors to 
+          prevent browning out due to voltage fluctuations. The STM32 was given specified crystal ocsilators to provided timing, and extra capacitors were used 
+          to reduce internal voltage fluctuations. After setting up the essentials for the STM32, the sensors were connected to the STM32 using SPI protocol. 
+          A flash chip and MicroSD card were connected as well to provide storage for data logging. Once the schematic was completed, the board traces were layed 
+          out on a four layer board, and was sent to JLCPCB for manufacturing. Finally, the SMD components were soldered to the completed boards using a pick-and-place 
+          machine and checks were done to insure there were no shorts on the board.
+        </p>
 
         <h3>What I learned</h3>
-        <p>Results, test data, problems, and what you improved next.</p>
+        <p>This design process taught me how to:
+          <ul>
+            <li>Make custom symbols and footprints</li>
+            <li>Use SPI, I2C, and UART</li>
+            <li>Layout a schematics</li>
+            <li>Layout traces</li>
+            <li>Use a pick-and-place machine</li>
+            <li>Test for shorts</li>
+            <li>Configure STM32 components</li>
+          </ul>
+          The product performed as expected and collected data across multiple different launches. However, the design could be improved by 
+          routing traces strategically to improve signal integrity, and more sensors could be added to read battery life and improve operations 
+          under higher G forces.
+        </p>
       </section>
 
       <!-- ================= ITERATION 3 ================= -->
       <section class="iteration" id="iteration-3">
         <div class="tag">Iteration 03</div>
-        <h2>Give this iteration a name</h2>
+        <h2>FIRM v1</h2>
 
         <div class="photos">
           <img src="../images/project-1-iter3-a.jpg" alt="Iteration 3, photo 1">
