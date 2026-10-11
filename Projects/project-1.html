@@ -27,6 +27,17 @@
     }
     .iteration h3 { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); margin: 20px 0 6px; }
     .iteration p { max-width: 680px; }
+    /* Click-to-enlarge viewer */
+    .photos img { cursor: zoom-in; }
+    #viewer { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; background: rgba(4,5,10,0.94); }
+    #viewer.open { display: flex; }
+    #viewer img { max-width: 92vw; max-height: 88vh; object-fit: contain; border: 1px solid var(--line); }
+    #viewer button { position: absolute; background: none; border: 1px solid var(--glow); color: var(--glow); width: 44px; height: 44px; font-size: 1.4rem; cursor: pointer; }
+    #viewer button:hover { background: var(--glow); color: var(--bg); }
+    #viewer .close { top: 18px; right: 18px; }
+    #viewer .prev { left: 18px; top: 50%; }
+    #viewer .next { right: 18px; top: 50%; }
+    #viewer .count { position: absolute; bottom: 16px; color: var(--soft); font-size: 0.85rem; letter-spacing: 2px; }
   </style>
 </head>
 <body>
@@ -53,7 +64,7 @@
         <h2>Give this iteration a name</h2>
 
         <div class="photos">
-          <img src="../images/milled-firm-front.jpeg" alt="Iteration 1, photo 1">
+          <img src="../images/milled-firm-back.jpeg" alt="Iteration 1, photo 1">
           <img src="../images/milled-firm-back.jpeg" alt="Iteration 1, photo 2">
           <img src="../images/project-1-iter1-c.jpg" alt="Iteration 1, photo 3">
         </div>
@@ -103,6 +114,14 @@
 
     </div>
   </main>
+  <div id="viewer" aria-hidden="true">
+    <button class="close" aria-label="Close">&times;</button>
+    <button class="prev" aria-label="Previous photo">&lsaquo;</button>
+    <img alt="">
+    <button class="next" aria-label="Next photo">&rsaquo;</button>
+    <div class="count"></div>
+  </div>
+
   <script>
     /* Sizes each photo to its own shape so nothing is cropped */
     document.querySelectorAll('.photos img').forEach(function (img) {
@@ -112,6 +131,40 @@
         }
       }
       if (img.complete) fit(); else img.addEventListener('load', fit);
+    });
+
+    /* Click a photo to enlarge it; arrows / Esc work too */
+    var viewer = document.getElementById('viewer');
+    var big = viewer.querySelector('img');
+    var count = viewer.querySelector('.count');
+    var group = [], idx = 0;
+    function show() {
+      big.src = group[idx].src;
+      big.alt = group[idx].alt;
+      count.textContent = (idx + 1) + ' / ' + group.length;
+    }
+    function open(img) {
+      group = Array.from(img.parentElement.querySelectorAll('img'));
+      idx = group.indexOf(img);
+      show();
+      viewer.classList.add('open');
+    }
+    function close() { viewer.classList.remove('open'); }
+    function step(n) { idx = (idx + n + group.length) % group.length; show(); }
+    document.querySelectorAll('.photos img').forEach(function (img) {
+      img.tabIndex = 0;
+      img.addEventListener('click', function () { open(img); });
+      img.addEventListener('keydown', function (e) { if (e.key === 'Enter') open(img); });
+    });
+    viewer.querySelector('.close').onclick = close;
+    viewer.querySelector('.prev').onclick = function (e) { e.stopPropagation(); step(-1); };
+    viewer.querySelector('.next').onclick = function (e) { e.stopPropagation(); step(1); };
+    viewer.addEventListener('click', function (e) { if (e.target === viewer) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!viewer.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
   </script>
 </body>
