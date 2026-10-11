@@ -4,32 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Project One | Your Name</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=3">
+  <style>
+    /* Styles for the iteration sections (uses colors from style.css) */
+    .jump { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 8px; }
+    .iteration { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .iteration .tag { color: var(--glow); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; }
+    .iteration h2 { margin: 6px 0 20px; color: var(--ink); font-size: 1.6rem; letter-spacing: 2px; }
+    .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .photos img { width: 100%; height: 220px; object-fit: cover; display: block; border: 1px solid var(--line); background: var(--panel); }
+    .iteration h3 { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); margin: 20px 0 6px; }
+    .iteration p { max-width: 680px; }
+  </style>
 </head>
 <body>
   <main class="project-page">
     <div class="wrap">
-      <a class="back" href="../index.html">Back to all projects</a>
+      <a class="back" href="../index.html">&larr; Back to all projects</a>
 
       <h1>Project One</h1>
-      <p>A short summary: what the project is, when you did it, and your role.</p>
+      <p>A short summary of the whole project: what it is, when you did it, and your role.</p>
 
-      <img class="hero-img" src="../images/project-1.jpg" alt="Photo of Project One">
+      <!-- Jump links to each iteration -->
+      <div class="jump">
+        <a class="btn" href="#iteration-1">Iteration 1</a>
+        <a class="btn" href="#iteration-2">Iteration 2</a>
+        <a class="btn" href="#iteration-3">Iteration 3</a>
+      </div>
 
-      <h2>The problem</h2>
-      <p>What were you trying to solve or build?</p>
+      <!-- ================= ITERATION 1 ================= -->
+      <section class="iteration" id="iteration-1">
+        <div class="tag">Iteration 01</div>
+        <h2>Give this iteration a name</h2>
 
-      <h2>My approach</h2>
-      <p>Describe your design process, tools (CAD, MATLAB, Arduino, etc.), and key decisions.</p>
+        <div class="photos">
+          <img src="../images/project-1-iter1-a.jpg" alt="Iteration 1, photo 1">
+          <img src="../images/project-1-iter1-b.jpg" alt="Iteration 1, photo 2">
+          <img src="../images/project-1-iter1-c.jpg" alt="Iteration 1, photo 3">
+        </div>
 
-      <h2>Results</h2>
-      <ul>
-        <li>A measurable outcome</li>
-        <li>What you learned</li>
-      </ul>
+        <h3>What I did</h3>
+        <p>Describe the design, the tools you used (CAD, MATLAB, 3D printing, etc.), and the key decisions you made.</p>
+
+        <h3>What I learned</h3>
+        <p>What worked, what failed, and what you wanted to change for the next version.</p>
+      </section>
+
+      <!-- ================= ITERATION 2 ================= -->
+      <section class="iteration" id="iteration-2">
+        <div class="tag">Iteration 02</div>
+        <h2>Give this iteration a name</h2>
+
+        <div class="photos">
+          <img src="../images/project-1-iter2-a.jpg" alt="Iteration 2, photo 1">
+          <img src="../images/project-1-iter2-b.jpg" alt="Iteration 2, photo 2">
+          <img src="../images/project-1-iter2-c.jpg" alt="Iteration 2, photo 3">
+        </div>
+
+        <h3>What I did</h3>
+        <p>What did you change from Iteration 1, and why?</p>
+
+        <h3>What I learned</h3>
+        <p>Results, test data, problems, and what you improved next.</p>
+      </section>
+
+      <!-- ================= ITERATION 3 ================= -->
+      <section class="iteration" id="iteration-3">
+        <div class="tag">Iteration 03</div>
+        <h2>Give this iteration a name</h2>
+
+        <div class="photos">
+          <img src="../images/project-1-iter3-a.jpg" alt="Iteration 3, photo 1">
+          <img src="../images/project-1-iter3-b.jpg" alt="Iteration 3, photo 2">
+          <img src="../images/project-1-iter3-c.jpg" alt="Iteration 3, photo 3">
+        </div>
+
+        <h3>What I did</h3>
+        <p>Describe the final design and what you changed.</p>
+
+        <h3>Final result</h3>
+        <p>How it performed, what you would do differently, and what you took away from the project.</p>
+      </section>
+
     </div>
   </main>
 </body>
