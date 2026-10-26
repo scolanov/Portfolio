@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>L1 Rocket Certification | Your Name</title>
+  <title>Project One | Your Name</title>
   <link rel="stylesheet" href="../style.css?v=3">
   <style>
+    /* Styles for the iteration sections (uses colors from style.css) */
     .jump { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 8px; }
-    .phase { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
-    .phase .tag { color: var(--glow); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; }
-    .phase h2 { margin: 6px 0 20px; color: var(--ink); font-size: 1.6rem; letter-spacing: 2px; }
-    .phase h3 { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); margin: 20px 0 6px; }
-    .phase p { max-width: 680px; }
-    .phase ul, .phase ol { padding-left: 22px; max-width: 680px; }
-    .phase li { margin-bottom: 6px; }
-
-    /* Photos: each sized to its own shape, nothing cropped */
+    .iteration { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .iteration .tag { color: var(--glow); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; }
+    .iteration h2 { margin: 6px 0 20px; color: var(--ink); font-size: 1.6rem; letter-spacing: 2px; }
     .photos { display: flex; gap: 12px; margin-bottom: 24px; }
     .photos img {
-      flex: var(--r, 1) 1 0; min-width: 0; aspect-ratio: var(--r, 1.5); height: auto;
-      display: block; border: 1px solid var(--line); background: var(--panel); cursor: zoom-in;
+      flex: var(--r, 1) 1 0;      /* wider photos get more room, so all share one height */
+      min-width: 0;
+      aspect-ratio: var(--r, 1.5);
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+      background: var(--panel);
     }
-    @media (max-width: 700px) { .photos { flex-direction: column; } .photos img { flex: none; width: 100%; } }
-
-    /* Video */
-    .video { margin: 0 0 24px; }
-    .video video, .video iframe { width: 100%; display: block; border: 1px solid var(--line); background: #000; }
-    .video iframe { aspect-ratio: 16 / 9; }
-
+    @media (max-width: 700px) {
+      .photos { flex-direction: column; }
+      .photos img { flex: none; width: 100%; }
+    }
+    .iteration h3 { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: var(--soft); margin: 20px 0 6px; }
+    .iteration p { max-width: 680px; }
     /* Click-to-enlarge viewer */
+    .photos img { cursor: zoom-in; }
     #viewer { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; background: rgba(4,5,10,0.94); }
     #viewer.open { display: flex; }
     #viewer img { max-width: 92vw; max-height: 88vh; object-fit: contain; border: 1px solid var(--line); }
